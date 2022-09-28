@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1858f5cc-25b2-4731-ab78-b332e7a7381c" name="Changes" comment="">
+    <list default="true" id="1858f5cc-25b2-4731-ab78-b332e7a7381c" name="Changes" comment="Added comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/span/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/span/App.java" afterDir="false" />
     </list>
@@ -73,5 +73,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added comments" />
   </component>
 </project>
