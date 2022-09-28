@@ -5,26 +5,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class App {
 
     private static Map<String, Integer> leagueMap = new LinkedHashMap<>();
 
     public static void main(String[] args) {
-        /*if (args.length == 0) {
-            System.out.println("File name not specified.");
-            System.exit(1);
-        }
-        System.out.println(args[0]);
-        */
-        //readFile(args[0]);
-        readFile("C:/Users/h/Desktop/nuevo.txt");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Write a filepath please: ");
+
+        String filePath = scanner.nextLine();
+
+        readFile(filePath);
     }
 
     public static void readFile(String filePath) {
         BufferedReader reader = null;
         String currentLine;
+
         try {
             reader = new BufferedReader(new FileReader(filePath));
             while ((currentLine = reader.readLine()) != null) {
