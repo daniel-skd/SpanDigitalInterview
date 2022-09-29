@@ -60,7 +60,7 @@
               <addClasspath>true</addClasspath>
               <classpathPrefix>libs/</classpathPrefix>
               <mainClass>
-                com.baeldung.executable.ExecutableMavenJar
+                com.span.App
               </mainClass>
             </manifest>
           </archive>

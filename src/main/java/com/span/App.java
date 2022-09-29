@@ -47,13 +47,13 @@ public class App {
     /*
      * This method will write the result in the desired form on a file
      */
-    public static void writeResults(LinkedHashMap<String, Integer> map){
+    public static void writeResults(LinkedHashMap<String, Integer> map) {
         String fileName = "Span_League_Ranking.txt";
         int i = 1;
         try {
             BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
 
-            for (Map.Entry<String,Integer> entry : map.entrySet()) {
+            for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 writer.write(i + ". " + entry.getKey() + ", " + entry.getValue() + " points \n");
                 i++;
             }
@@ -97,13 +97,18 @@ public class App {
                 .map(s -> s.split("(?<=\\D)(?=\\d)"))
                 .collect(Collectors.toList());
 
-        for (int i = 0; i < 2; i++) {
-            int points = validateScore(Integer.valueOf(splitList2.get(0)[1]), Integer.valueOf(splitList2.get(1)[1]));
-            if (leagueMap.get(splitList2.get(i)[0].trim()) != null) {
-                points += leagueMap.get(splitList2.get(i)[0].trim());
-            }
-            leagueMap.put(splitList2.get(i)[0].trim(), points);
-        }
+        int pointsA = validateScore(Integer.valueOf(splitList2.get(0)[1]), Integer.valueOf(splitList2.get(1)[1]));
+        int pointsB = validateScore(Integer.valueOf(splitList2.get(1)[1]), Integer.valueOf(splitList2.get(0)[1]));
+
+        if (leagueMap.get(splitList2.get(0)[0].trim()) != null)
+            pointsA += leagueMap.get(splitList2.get(0)[0].trim());
+
+        leagueMap.put(splitList2.get(0)[0].trim(), pointsA);
+
+        if (leagueMap.get(splitList2.get(1)[0].trim()) != null)
+            pointsB += leagueMap.get(splitList2.get(1)[0].trim());
+
+        leagueMap.put(splitList2.get(1)[0].trim(), pointsB);
     }
 
     /*

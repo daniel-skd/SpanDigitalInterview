@@ -1,6 +1,8 @@
 # SpanDigitalInterview
 ### App Description
-This app will help in the calculating the ranking table for a league, taking the input from a file specified by the user, the user will provide the filepath to it.
+This app will help in the calculating the ranking table for a league, taking the input from a file specified by the user, the user will provide the filepath to it.  
+ + Important Note 1: The jar file can be executed with this command: java insertPathOfTheJar\SpanDigitalInterview-1.0-SNAPSHOT.jar  
+ + Important Note 2: The formatted text file will be generated on the folder where jar is executed with this name: "Span_League_Ranking.txt"
 ### Input/output
 The input and output will be text.
 The input contains results of games, one per line. See “Sample input” for details.
