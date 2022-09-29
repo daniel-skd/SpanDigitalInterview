@@ -1,8 +1,6 @@
 package com.span;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -13,7 +11,7 @@ public class App {
     public static void main(String[] args) {
         //We receive as input the filepath from the user where the Games are
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Write a filepath please: ");
+        System.out.println("Write the filepath of the file with the games, please: ");
 
         String filePath = scanner.nextLine();
 
@@ -47,13 +45,32 @@ public class App {
     }
 
     /*
-     * This method will work for two things:
-     * 1. Sort the leagueMap so that we can have a Descending Order for the Games
-     * 2. Will print the final results
+     * This method will write the result in the desired form on a file
+     */
+    public static void writeResults(LinkedHashMap<String, Integer> map){
+        String fileName = "Span_League_Ranking.txt";
+        int i = 1;
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
+
+            for (Map.Entry<String,Integer> entry : map.entrySet()) {
+                writer.write(i + ". " + entry.getKey() + ", " + entry.getValue() + " points \n");
+                i++;
+            }
+
+            writer.close();
+        } catch (IOException io) {
+            System.out.println("Error while trying to write file");
+            io.printStackTrace();
+        }
+    }
+
+    /*
+     * This method will work for this:
+     * Sort the leagueMap so that we can have a Descending Order for the Games
      */
     public static void sortMap() {
         LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
-        int i = 1;
 
         //Use Comparator.reverseOrder() for reverse ordering
         leagueMap.entrySet()
@@ -61,10 +78,7 @@ public class App {
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
 
-        for (Map.Entry<String,Integer> entry : reverseSortedMap.entrySet()) {
-            System.out.println(i + ". " + entry.getKey() + ", " + entry.getValue() + " points");
-            i++;
-        }
+        writeResults(reverseSortedMap);
     }
 
 
