@@ -23,6 +23,7 @@ public class SpanScoreboard {
         String filePath = scanner.nextLine();
 
         readFile(filePath);
+        // Method to get an ordered list of teams by Score
         List<Team> orderedTeam = orderScoreboard();
 
         if (writeScoreboard(orderedTeam)){
@@ -32,6 +33,10 @@ public class SpanScoreboard {
         }
     }
 
+    /*
+     * Method that will read the file, line by line, calling the splitMatches and the buildScoreboard
+     * so that SCOREBOARD List can be filled with all the necessary values.
+     */
     public static void readFile(String filePath) {
         BufferedReader reader = null;
         String currentLine;
@@ -59,6 +64,11 @@ public class SpanScoreboard {
         }
     }
 
+    /*
+     * With the help of a Map, this method will group the results by Team Name and add the scores
+     * of each team with the same name, then with that same map, a Final Ordered List of Teams
+     * will be created and will work as the final source to write the results on a file.
+     */
     public static List<Team> orderScoreboard() {
 
         List<Team> finalList = new ArrayList<>();
@@ -78,6 +88,11 @@ public class SpanScoreboard {
                 .collect(Collectors.toList());
     }
 
+    /*
+     * This is the final method which will write the result on a new file called "Span_League_Ranking.txt".
+     * The validation on the variable "c" is to know when a team has a draw with another on the final scores
+     * then both will have the same final place.
+     */
     public static boolean writeScoreboard(List<Team> orderedTeams) {
         String fileName = "Span_League_Ranking.txt";
         int c = 1;
@@ -99,6 +114,10 @@ public class SpanScoreboard {
         }
     }
 
+    /*
+     * Simple method to split and trim the line being read by the fileReader which will return a list of strings
+     * with the following format each record: "name score".
+     */
     public static List<String> splitMatches(String currentLine) {
 
         return Arrays.asList(Arrays.stream(currentLine.split(","))
@@ -106,6 +125,11 @@ public class SpanScoreboard {
                 .toArray(String[]::new));
     }
 
+    /*
+     * This method will get the split values that we obtain from the previous method to get
+     * the attributes of both Teams (name and score) and then will call the validator to know
+     * how many points are going to be assigned to each one.
+     */
     public static void buildScoreboard(List<String> splitList) {
 
         Team team1 = new Team();
@@ -123,7 +147,11 @@ public class SpanScoreboard {
         validateScore(team1, team2);
     }
 
-
+    /*
+     * Validator that will work to get the points earned on each Game following these rules:
+     * Winning gives 3 points and since there's a winner we also have a looser who receives 0 points
+     * Draw gives 1 point to both teams.
+     */
     public static void validateScore(Team team1, Team team2) {
 
         if (team1.getScore() > team2.getScore()) {

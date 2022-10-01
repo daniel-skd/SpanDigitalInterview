@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1858f5cc-25b2-4731-ab78-b332e7a7381c" name="Changes" comment="Added comments">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/span/SpanScoreboard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/span/model/Match.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/span/model/Team.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/span/SpanScoreboardTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/span/App.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/span/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpanDigitalInterview-1.0-SNAPSHOT.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/span/SpanScoreboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/span/SpanScoreboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
