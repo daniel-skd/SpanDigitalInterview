@@ -1,6 +1,8 @@
 package com.span;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Arrays;
 import java.util.List;
@@ -11,6 +13,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 public class SpanScoreboardTest {
+
+    private static Logger LOGGER = LoggerFactory.getLogger(SpanScoreboardTest.class);
 
     @Test
     public void test_whenSplit_thenCorrect() {
